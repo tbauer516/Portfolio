@@ -8,7 +8,8 @@
     "npm": "3.x"
   },
   "dependencies": {
-    "express": "latest"
+    "express": "latest",
+    "compression": "latest"
   },
   "main": "start.js",
   "scripts": {
