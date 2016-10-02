@@ -1,16 +1,19 @@
 {
-  "name": "openshift-cartridge-nodejs-template",
-  "version": "1.0.1",
-  "description": "Custom Node.js cartridge for OpenShift - sample application",
+  "name": "test-environment",
+  "version": "0.0.1",
+  "description": "Test environment for my practicing publishing a node server",
   "private": true,
-  "main": "start.js",
   "engines": {
     "node": "4.x",
     "npm": "3.x"
   },
-  "scripts": {
-    "start": "node --use_strict start.js"
+  "dependencies": {
+    "express": "latest"
   },
-  "author": "Ionut-Cristian Florescu <ionut.florescu@gmail.com>",
+  "main": "start.js",
+  "scripts": {
+    "start": "node start.js"
+  },
+  "author": "Tyler Bauer",
   "license": "ISC"
 }
