@@ -1,0 +1,19 @@
+{
+  "name": "test-environment",
+  "version": "0.0.1",
+  "description": "Test environment for my practicing publishing a node server",
+  "private": true,
+  "engines": {
+    "node": "4.x",
+    "npm": "3.x"
+  },
+  "dependencies": {
+    "express": "latest"
+  },
+  "main": "start.js",
+  "scripts": {
+    "start": "node start.js"
+  },
+  "author": "Tyler Bauer",
+  "license": "ISC"
+}

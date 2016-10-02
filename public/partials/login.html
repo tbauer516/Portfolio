@@ -1,0 +1,11 @@
+<form name="loginForm">
+	<input type="text" name="email" id="email" ng-model="email" placeholder="Email">
+	<br>
+	<input type="password" name="password" id="password" ng-model="password" placeholder="Password">
+	<br>
+	<a ui-sref="home" href="#/">
+		<button type="submit" name="submitButton" ng-click="signIn(email, password)">
+			Sign In
+		</button>
+	</a>
+</form>
