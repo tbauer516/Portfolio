@@ -4,6 +4,10 @@
   "description": "Custom Node.js cartridge for OpenShift - sample application",
   "private": true,
   "main": "start.js",
+  "engines": {
+    "node": ">=4.x",
+    "npm": ">=3.x"
+  },
   "scripts": {
     "start": "node --use_strict start.js"
   },
