@@ -73,6 +73,19 @@ app.use(express.static(__dirname + '/public'));
 //   console.log(`Application worker ${process.pid} started...`);
 // });
 
-app.listen(env.NODE_PORT || 3000, function() {
-  console.log(`Application worker ${process.pid} started on port ` + (env.NODE_PORT || 3000) + `...`);
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8000;
+var ipadress;
+var initIPAdress = function() {
+	var adress = process.env.OPENSHIFT_NODEJS_IP;
+	if (typeof adress === 'undefined') {
+		console.warn('No OPENSHIFT_NODEJS_IP var, using default ' + port);
+		adress = 'localhost';
+	}
+	ipadress = adress;
+}
+
+initIPAdress();
+
+app.listen(port, ipadress, function() {
+  console.log(`Application worker ${process.pid} started...`);
 });
