@@ -1,0 +1,316 @@
+$less-than-md: 767px;
+$less-than-lg: 991px;
+
+$sm: 544px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+$base: #22531F;
+$dark: #252525;
+$gray: #454545;
+$lighter: #0B6C06;
+$bright: #08A700;
+
+body {
+	padding-top: 50px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16pt;
+	background-color: $dark;
+	color: white;
+	.hide {
+		display: none;
+	}
+	a {
+		color: white !important;
+		text-decoration: none;
+		&:hover, &:focus {
+			color: black !important;
+			text-decoration: none !important;
+			background-color: white !important;
+			cursor: pointer;
+		}
+		&.active {
+			@extend a:hover;
+			a {
+				@extend a:hover;
+				&:focus {
+					@extend a:hover;
+				}
+			}
+		}
+		&.admin-hide {
+			display: none;
+		}
+		&.header {
+			position: relative;
+			height: 50px;
+			text-align: center;
+			&:hover, &:focus {
+				@extend a:hover;
+			}
+			div {
+				position: absolute;
+				height: 45px;
+				padding-left: 6px;
+				padding-right: 6px;
+				width: 170px;
+				font-size: 24pt;
+				margin: 0;
+				padding-top: 0px;
+				&:hover, &:focus {
+					color: white !important;
+				}
+			}
+		}
+		&.logout {
+			left: 200px;
+		}
+		&.logout div {
+			border: 2px solid white;
+		}
+		&.nav {
+			a {
+				&:hover, &:focus {
+					@extend a:hover;
+				}
+			}
+		}
+		// &.nav & {
+		// 	@extend a;
+		// }
+	}
+	button {
+		&.navbar-toggler {
+			color: white;
+			height: 45px;
+			border: 1px solid white;
+			cursor: pointer;
+		}
+	}
+	div {
+		
+		&#aboutMe {
+			color: white;
+			background-color: $gray;
+		}
+		&#connect p {
+			font-size: 24pt;
+		}
+		&#projects {
+			color: white;
+			background-color: $base;
+			.project {
+				margin-right: 10%;
+				margin-left: 10%;
+				border: 5px solid $lighter;
+				padding: 15px;
+				margin-bottom: 15px;
+				h1 {
+					font-size: 30pt;
+				}
+				hr {
+					height: 0px;
+					border-top: 2px solid $lighter;
+				}
+				img {
+					width: 100%;
+					height: 100%;
+					margin-bottom: 20px;
+				}
+				.date {
+					font-size: 12pt;
+					margin-left: 20px;
+				}
+				.edit {
+					border: 2px solid $lighter;
+					padding: 2px;
+				}
+				.source {
+					text-decoration: underline;
+				}
+			}
+		}
+		&#top {
+			#backgroundImg  {
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+				height: 500px;
+				background-image: url("../img/dunes-xs.jpg");
+				opacity: 0.5;
+				position: relative;
+				@media screen and (min-width: $md) {
+					background-image: url("../img/dunes-sm.jpg");
+				}
+				@media screen and (min-width: $lg) {
+					background-image: url("../img/dunes-md.jpg");
+				}
+				@media screen and (min-width: $xl) {
+					background-image: url("../img/dunes-lg.jpg");
+				}
+			}
+			.pName {
+				font-size: 80pt;
+				position: absolute;
+				height: 70pt;
+				top: 50%;
+				margin-top: -35pt;
+				margin-left: 10%;
+				color: white;
+			}
+			&.transparent {
+				background-color: $base;
+			}
+		}
+		&.section {
+			height: auto;
+			overflow: hidden;
+			padding: 20px;
+			& > h1 {
+				margin-top: 0px;
+				margin-bottom: 20px;
+				text-align: center;
+				font-size: 46pt;
+			}
+			& > p {
+				text-align: center;
+			}
+		}
+		.sidebar-column {
+			z-index: 1;
+			@media screen and (max-width: $md) {
+				min-height: 0px;
+			}
+			.sidebar {
+				position: fixed;
+				width: 100%;
+				background-color: $dark;
+				@media screen and (min-width: $md) {
+					width: inherit;
+				}
+				.sidebar-ul {
+					width: 100%;
+					a {
+						display: inline-block;
+						padding-top: 5px;
+						padding-bottom: 5px;
+						padding-left: 10px;
+						padding-right: 10px;
+						width: 100%;
+					}
+				}
+			}
+		}
+		.main-content {
+			position: relative;
+			@media screen and (min-width: $md) {
+				border-left-width: 5px;
+				border-left-style: solid;
+				border-left-color: $lighter;
+			}
+		}
+	}
+	footer {
+		border-top-style: solid;
+		border-top-color: $gray;
+		border-top-width: 5px;
+		padding-top: 5px;
+		color: white;
+		height: 35px;
+	}
+	i {
+		&.icon {
+			font-size: 30pt;
+		}
+	}
+	img {
+		&.profile {
+			height: 300px;
+			width: 300px;
+			background-image: url("../img/profile.jpg");
+			background-position: center;
+			background-size: contain;
+			@media screen and (min-width: $md) {
+				height: 400px;
+				width: 400px;
+			}
+		}
+	}
+	nav {
+		&.navbar {
+			background-color: $gray;
+			margin-bottom: 0;
+			height: 50px;
+			border-bottom: 5px solid $lighter;
+		}
+	}
+	.pre-wrap {
+		white-space: pre-wrap;
+	}
+}
+
+.aboutList {
+	padding: 0px;
+	margin: 0px;
+	margin-top: 10px;
+}
+
+.aboutListItem {
+	margin-left: 30px;
+}
+
+.about-me-lists, .about-me-lists li {
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
+.connections {
+	border: 5px solid $gray;
+	padding: 15px;
+	width: auto;
+	display: inline-block;
+}
+
+// .connections-wrapper {
+// 	text-align: center;
+// 	padding-left: 15px;
+// 	padding-right: 15px;
+// 	margin-bottom: 20px;
+// 	margin-top: 10px;
+// }
+
+// form input, form button, form textarea {
+// 	color: black;
+// }
+
+
+
+
+// .nav li{
+// 	background-color: $dark !important;
+// }
+
+ 
+
+// .navbar-header {
+// 	margin-left: 0px !important;
+// 	margin-right: 0px !important;
+// }
+
+// .margin-left {
+// 	margin-left: 20px;
+// }
+
+// .profile-div {
+// 	text-align: center;
+// }
+
+.sidebar-grid {
+	z-index: 1;
+	background-color: $dark !important;
+}
+
+.tooltip {
+	font-size: 20pt;
+}

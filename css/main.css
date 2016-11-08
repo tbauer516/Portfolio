@@ -1,0 +1,192 @@
+body {
+  padding-top: 50px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16pt;
+  background-color: #252525;
+  color: white; }
+  body .hide {
+    display: none; }
+  body a {
+    color: white !important;
+    text-decoration: none; }
+    body a:hover, body a.active, body a.active a, body a.active a:focus, body a.header:hover, body a.header:focus, body a.nav a:hover, body a.nav a:focus, body a:focus {
+      color: black !important;
+      text-decoration: none !important;
+      background-color: white !important;
+      cursor: pointer; }
+    body a.admin-hide {
+      display: none; }
+    body a.header {
+      position: relative;
+      height: 50px;
+      text-align: center; }
+      body a.header div {
+        position: absolute;
+        height: 45px;
+        padding-left: 6px;
+        padding-right: 6px;
+        width: 170px;
+        font-size: 24pt;
+        margin: 0;
+        padding-top: 0px; }
+        body a.header div:hover, body a.header div:focus {
+          color: white !important; }
+    body a.logout {
+      left: 200px; }
+    body a.logout div {
+      border: 2px solid white; }
+  body button.navbar-toggler {
+    color: white;
+    height: 45px;
+    border: 1px solid white;
+    cursor: pointer; }
+  body div#aboutMe {
+    color: white;
+    background-color: #454545; }
+  body div#connect p {
+    font-size: 24pt; }
+  body div#projects {
+    color: white;
+    background-color: #22531F; }
+    body div#projects .project {
+      margin-right: 10%;
+      margin-left: 10%;
+      border: 5px solid #0B6C06;
+      padding: 15px;
+      margin-bottom: 15px; }
+      body div#projects .project h1 {
+        font-size: 30pt; }
+      body div#projects .project hr {
+        height: 0px;
+        border-top: 2px solid #0B6C06; }
+      body div#projects .project img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px; }
+      body div#projects .project .date {
+        font-size: 12pt;
+        margin-left: 20px; }
+      body div#projects .project .edit {
+        border: 2px solid #0B6C06;
+        padding: 2px; }
+      body div#projects .project .source {
+        text-decoration: underline; }
+  body div#top #backgroundImg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    background-image: url("../img/dunes-xs.jpg");
+    opacity: 0.5;
+    position: relative; }
+    @media screen and (min-width: 768px) {
+      body div#top #backgroundImg {
+        background-image: url("../img/dunes-sm.jpg"); } }
+    @media screen and (min-width: 992px) {
+      body div#top #backgroundImg {
+        background-image: url("../img/dunes-md.jpg"); } }
+    @media screen and (min-width: 1200px) {
+      body div#top #backgroundImg {
+        background-image: url("../img/dunes-lg.jpg"); } }
+  body div#top .pName {
+    font-size: 80pt;
+    position: absolute;
+    height: 70pt;
+    top: 50%;
+    margin-top: -35pt;
+    margin-left: 10%;
+    color: white; }
+  body div#top.transparent {
+    background-color: #22531F; }
+  body div.section {
+    height: auto;
+    overflow: hidden;
+    padding: 20px; }
+    body div.section > h1 {
+      margin-top: 0px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 46pt; }
+    body div.section > p {
+      text-align: center; }
+  body div .sidebar-column {
+    z-index: 1; }
+    @media screen and (max-width: 768px) {
+      body div .sidebar-column {
+        min-height: 0px; } }
+    body div .sidebar-column .sidebar {
+      position: fixed;
+      width: 100%;
+      background-color: #252525; }
+      @media screen and (min-width: 768px) {
+        body div .sidebar-column .sidebar {
+          width: inherit; } }
+      body div .sidebar-column .sidebar .sidebar-ul {
+        width: 100%; }
+        body div .sidebar-column .sidebar .sidebar-ul a {
+          display: inline-block;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          padding-left: 10px;
+          padding-right: 10px;
+          width: 100%; }
+  body div .main-content {
+    position: relative; }
+    @media screen and (min-width: 768px) {
+      body div .main-content {
+        border-left-width: 5px;
+        border-left-style: solid;
+        border-left-color: #0B6C06; } }
+  body footer {
+    border-top-style: solid;
+    border-top-color: #454545;
+    border-top-width: 5px;
+    padding-top: 5px;
+    color: white;
+    height: 35px; }
+  body i.icon {
+    font-size: 30pt; }
+  body img.profile {
+    height: 300px;
+    width: 300px;
+    background-image: url("../img/profile.jpg");
+    background-position: center;
+    background-size: contain; }
+    @media screen and (min-width: 768px) {
+      body img.profile {
+        height: 400px;
+        width: 400px; } }
+  body nav.navbar {
+    background-color: #454545;
+    margin-bottom: 0;
+    height: 50px;
+    border-bottom: 5px solid #0B6C06; }
+  body .pre-wrap {
+    white-space: pre-wrap; }
+
+.aboutList {
+  padding: 0px;
+  margin: 0px;
+  margin-top: 10px; }
+
+.aboutListItem {
+  margin-left: 30px; }
+
+.about-me-lists, .about-me-lists li {
+  padding-left: 0px;
+  margin-left: 0px; }
+
+.connections {
+  border: 5px solid #454545;
+  padding: 15px;
+  width: auto;
+  display: inline-block; }
+
+.sidebar-grid {
+  z-index: 1;
+  background-color: #252525 !important; }
+
+.tooltip {
+  font-size: 20pt; }
+
+/*# sourceMappingURL=main.css.map */

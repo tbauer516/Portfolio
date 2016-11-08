@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Tyler Bauer">
+    <meta name="description" content="Welcome to my personal portfolio. Here you will find all information and projects related to myself, Tyler Bauer.">
+
+    <title>Tyler Bauer's Portfolio</title>
+
+
+    <!-- for FF, Chrome, Opera -->
+    <link rel="icon" type="image/png" href="/img/favicon16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicon.png" sizes="32x32">
+
+    <!-- for IE -->
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" >
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico"/>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- Tether JS -->
+    <script src="js/tether.min.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+    <!-- Ion Icons -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+    <!-- Google Font <Josefin Sans> -->
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,400italic,700' rel='stylesheet' type="text/css">
+    <!-- our CSS -->
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/loader.css" type="text/css">
+    <!-- Clipboard.js -->
+    <script src="lib/clipboard.min.js"></script>
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-73503609-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBx6A6P75mBl4l2NFTCKxqZWZOvAwT9Fws",
+            authDomain: "bauerportfolio.firebaseapp.com",
+            databaseURL: "https://bauerportfolio.firebaseio.com",
+            storageBucket: "project-3006903924566727548.appspot.com",
+            messagingSenderId: "906814384085"
+        };
+        firebase.initializeApp(config);
+    </script>
+    
+</head>
+
+<body data-spy="scroll" data-target="#sideNavbar" data-offset="50">
+    <div>
+        <div class="loader">Loading...</div>
+    </div>
+    <div class="container-fluid hide">
+        <nav class="navbar navbar-fixed-top pl-0 py-0">
+            <div class="hidden-lg-up float-xs-right">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sideNavbar" aria-controls="sideNavbar" aria-expanded="false" aria-label="Toggle navigation">&#9776</button>
+            </div>
+            <a class="header" href="#top">
+                <div>Tyler Bauer</div>
+            </a>
+            <a class="header admin admin-hide logout">
+                <div>Log Out</div>
+            </a>
+        </nav>
+
+        <div class="row">
+        
+            <!-- Sidebar nav -->
+            <div class="col-md-2 col-lg-1 px-0 sidebar-column">
+                <nav class="collapse navbar-toggleable-md sidebar" id="sideNavbar" role="navigation">
+                    <ul class="nav col-xs-2 col-lg-1 sidebar-ul px-0">
+                        <li class="nav-item"><a class="nav-link" href="#aboutMe">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#connect">Connect</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-xs-12 col-md-10 col-lg-11 px-0 main-content">
+                <div id="top" class="transparent section px-0 py-0">
+                    <div id="backgroundImg" class="section">
+                        <p class="pName">Tyler Bauer</p>
+                    </div>
+                </div>
+                <div id="aboutMe" class="section">
+                    <a class="admin admin-hide" href="edit/edit-profile/">Edit Profile</a>
+                    <h1>About Me</h1>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <img class="profile mx-auto d-block" alt="profile">
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div>
+                                <p>Date of Birth: info.dob</p>
+                                <p>Education: info.school</p>
+                                <p>Degree: info.degree</p>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <p>Skills:</p>
+                                        <ul>
+                                            <li>skills</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <p>Languages:</p>
+                                        <ul>
+                                            <li>languages</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-xs-12">
+                            <div>
+                                <p class="pre-wrap">description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="projects" class="section">
+                    <a class="admin admin-hide" href="edit/edit-project/">Add Project</a>
+                    <h1>My Projects</h1>
+                    <div>
+                        <div id="projects-list" class="row">
+                            <div class="project">
+                                <h1>{{projects[i].title}}</h1>
+                                <a target="_blank"><img alt="screenshot"></a>
+                                <p>{{projects[i].description}}</p>
+                                <hr>
+                                <p class="date">- Completed: {{getDate(projects[i].date * -1) | date : 'MMM dd, yyyy'}}</p>
+                                <a class="source" target="_blank">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="connect" class="section">
+                        <h1>Connect With Me</h1>
+                        <div class="text-xs-center">
+                            <p class="connections">
+                                <a href="https://www.linkedin.com/in/tbauer516" target="_blank"><i class="icon ion-social-linkedin-outline align-middle"></i> <span class="align-middle"> LinkedIn Profile</span></a>
+                                <a class="margin-left" id="my-email" href="" data-toggle="tooltip" data-placement="top" data-trigger="click" title="My email is copied to your clipboard!"><i class="icon ion-email align-middle"></i><span class="align-middle"> Email Me</span></a>
+                            </p>
+                        </div>
+                        <div class="text-xs-center">
+                            <p>
+                                Thank you for visiting my humble website. I hope you enjoyed your time here. Please feel free to connect with me by visiting my LinkedIn profile and inviting me to connect. If you would like to communicate with me immediately, feel free to send me an email. If you really liked me, feel free to do both.
+                            </p>
+                        </div>
+                    </div>
+
+            </div><!-- Closing Tag For Main Content -->
+        </div>
+    </div>
+
+
+    <!-- Login modal -->
+    <div id="login" class="modal fade">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button> -->
+                    <h4 class="modal-title">Please Login:</h4>
+                </div>
+                <div class="modal-body">
+                    <form name="login" id="login-form" autocomplete="off" onsubmit="event.preventDefault(); tryLogin();">
+                        <input class="form-control" name="email" id="email" placeholder="Username...">
+                        <br>
+                        <input class="form-control" name="password" id="password" type="password" placeholder="Password...">
+                        <br>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <input type="submit" class="btn btn-primary" placeholder="Login">
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <!-- our Javascript -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
