@@ -62,6 +62,9 @@
 <body>
 
     <form name="profile">
+        <h1>Intro</h1>
+        <textarea name="description" id="description" class="form-control" placeholder="Introduction here..."></textarea>
+        <hr>
 		<h1>DOB</h1>
 		<input name="dob" id="dob" class="form-control" placeholder="DOB...">
 		<h1>School</h1>
@@ -72,15 +75,12 @@
 		<textarea name="skills" id="skills" class="form-control" placeholder="Skills..."></textarea>
 		<h1>Languages I Know</h1>
 		<textarea name="languages" id="languages" class="form-control" placeholder="Languages..."></textarea>
-		<h1>Description</h1>
-		<textarea name="description" id="description" class="form-control" placeholder="Paragraph about myself"></textarea>
 		<h1>Image</h1>
 		<textarea name="image" id="image" class="form-control" placeholder="Image URI here..."></textarea>
-		<button class="btn btn-secondary" onclick="clearImg()">Clear</button>
+		<button type="button" class="btn btn-secondary" onclick="clearImg()">Clear</button>
 		<a href="../img-encoder/index.html" target="_blank">
 			Get img URI
 		</a>
-		<br>
 		<button type="button" id="save" class="btn btn-secondary">Save Changes</button>
 	</form>
 

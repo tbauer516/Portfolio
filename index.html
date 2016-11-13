@@ -37,7 +37,7 @@
     <script src="lib/clipboard.min.js"></script>
 
     <!-- Google Analytics -->
-    <script>
+    <script async>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -60,6 +60,7 @@
         };
         firebase.initializeApp(config);
     </script>
+    <script async src="js/firebase-load.js"></script>
     
 </head>
 
@@ -69,23 +70,24 @@
     </div>
     <div class="container-fluid hide">
         <nav class="navbar navbar-fixed-top pl-0 py-0">
-            <div class="hidden-lg-up float-xs-right">
+            <div class="hidden-md-up float-xs-right">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sideNavbar" aria-controls="sideNavbar" aria-expanded="false" aria-label="Toggle navigation">&#9776</button>
             </div>
-            <a class="header" href="#top">
-                <div>Tyler Bauer</div>
-            </a>
-            <a class="header admin admin-hide logout">
-                <div>Log Out</div>
-            </a>
+            <div class="header">
+                <a href="#top">TB</a>
+            </div>
+            <div class="header admin admin-hide logout">
+                <a>Log Out</a>
+            </div>
         </nav>
 
         <div class="row">
         
             <!-- Sidebar nav -->
             <div class="col-md-2 col-lg-1 px-0 sidebar-column">
-                <nav class="collapse navbar-toggleable-md sidebar" id="sideNavbar" role="navigation">
-                    <ul class="nav col-xs-2 col-lg-1 sidebar-ul px-0">
+                <nav class="collapse navbar-toggleable-sm sidebar" id="sideNavbar" role="navigation">
+                    <ul class="nav col-xs-12 sidebar-ul px-0">
+                        <li class="nav-item"><a class="nav-link" href="#aboutSite">Intro</a></li>
                         <li class="nav-item"><a class="nav-link" href="#aboutMe">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                         <li class="nav-item"><a class="nav-link" href="#connect">Connect</a></li>
@@ -100,40 +102,61 @@
                         <p class="pName">Tyler Bauer</p>
                     </div>
                 </div>
+                <div id="aboutSite" class="section">
+                    <a class="admin admin-hide" href="edit/edit-profile">Edit Intro</a>
+                    <h1>What is this place?</h1>
+                    <div class="row mt-1">
+                        <div class="col-xs-12">
+                            <div>
+                                <p class="pre-wrap" id="info-description"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div id="aboutMe" class="section">
                     <a class="admin admin-hide" href="edit/edit-profile/">Edit Profile</a>
                     <h1>About Me</h1>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
-                            <img class="profile mx-auto d-block" alt="profile">
+                            <img id="info-profile" class="profile mx-auto d-block" src="" alt="profile">
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <div>
-                                <p>Date of Birth: info.dob</p>
-                                <p>Education: info.school</p>
-                                <p>Degree: info.degree</p>
+                            <div class="margin-right-100">
                                 <div class="row">
-                                    <div class="col-xs-12 col-sm-6">
+                                    <div class="col-xs-6">Date of Birth:</div>
+                                    <div class="col-xs-6" id="info-dob"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">Education:</div>
+                                    <div class="col-xs-6" id="info-school"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">Degree:</div>
+                                    <div class="col-xs-6" id="info-degree"></div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-6">
                                         <p>Skills:</p>
-                                        <ul>
-                                            <li>skills</li>
+                                        <ul class="pl-1" id="info-skills">
+                                            
                                         </ul>
                                     </div>
-                                    <div class="col-xs-12 col-sm-6">
+                                    <div class="col-xs-6 col-sm-6">
                                         <p>Languages:</p>
-                                        <ul>
-                                            <li>languages</li>
+                                        <ul class="pl-1" id="info-languages">
+                                            
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-1">
-                        <div class="col-xs-12">
-                            <div>
-                                <p class="pre-wrap">description</p>
-                            </div>
+                    <div class="row mt-1" id="work">
+                        <a class="admin admin-hide" href="edit/edit-work/">Add Work</a>
+                        <h2>Previous Work</h2>
+                        <div id="work-list">
+
                         </div>
                     </div>
                 </div>
@@ -142,14 +165,7 @@
                     <h1>My Projects</h1>
                     <div>
                         <div id="projects-list" class="row">
-                            <div class="project">
-                                <h1>{{projects[i].title}}</h1>
-                                <a target="_blank"><img alt="screenshot"></a>
-                                <p>{{projects[i].description}}</p>
-                                <hr>
-                                <p class="date">- Completed: {{getDate(projects[i].date * -1) | date : 'MMM dd, yyyy'}}</p>
-                                <a class="source" target="_blank">Source Code</a>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

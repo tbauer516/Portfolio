@@ -9,32 +9,13 @@ body {
   body a {
     color: white !important;
     text-decoration: none; }
-    body a:hover, body a.active, body a.active a, body a.active a:focus, body a.header:hover, body a.header:focus, body a.nav a:hover, body a.nav a:focus, body a:focus {
+    body a:hover, body a.active, body a.active a, body a.active a:focus, body a.nav a:hover, body a.nav a:focus, body a:focus {
       color: black !important;
       text-decoration: none !important;
       background-color: white !important;
       cursor: pointer; }
     body a.admin-hide {
       display: none; }
-    body a.header {
-      position: relative;
-      height: 50px;
-      text-align: center; }
-      body a.header div {
-        position: absolute;
-        height: 45px;
-        padding-left: 6px;
-        padding-right: 6px;
-        width: 170px;
-        font-size: 24pt;
-        margin: 0;
-        padding-top: 0px; }
-        body a.header div:hover, body a.header div:focus {
-          color: white !important; }
-    body a.logout {
-      left: 200px; }
-    body a.logout div {
-      border: 2px solid white; }
   body button.navbar-toggler {
     color: white;
     height: 45px;
@@ -43,26 +24,31 @@ body {
   body div#aboutMe {
     color: white;
     background-color: #454545; }
+    body div#aboutMe hr {
+      height: 0px;
+      border-top: 2px solid #252525; }
+    body div#aboutMe img.profile {
+      width: 100%;
+      max-width: 400px;
+      height: auto; }
+    body div#aboutMe .work {
+      padding: 10px; }
   body div#connect p {
     font-size: 24pt; }
   body div#projects {
     color: white;
     background-color: #22531F; }
+    body div#projects .project-img {
+      margin-bottom: 15px; }
     body div#projects .project {
       margin-right: 10%;
       margin-left: 10%;
       border: 5px solid #0B6C06;
       padding: 15px;
-      margin-bottom: 15px; }
-      body div#projects .project h1 {
-        font-size: 30pt; }
+      margin-top: 15px; }
       body div#projects .project hr {
         height: 0px;
         border-top: 2px solid #0B6C06; }
-      body div#projects .project img {
-        width: 100%;
-        height: 100%;
-        margin-bottom: 20px; }
       body div#projects .project .date {
         font-size: 12pt;
         margin-left: 20px; }
@@ -71,6 +57,9 @@ body {
         padding: 2px; }
       body div#projects .project .source {
         text-decoration: underline; }
+  body div.work {
+    border: 5px solid #252525;
+    margin-top: 15px; }
   body div#top #backgroundImg {
     background-repeat: no-repeat;
     background-position: center;
@@ -109,6 +98,27 @@ body {
       font-size: 46pt; }
     body div.section > p {
       text-align: center; }
+  body div.header {
+    position: relative;
+    display: inline-block;
+    height: 45px;
+    padding: 0px;
+    font-size: 24pt;
+    margin: 0; }
+    body div.header a {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      padding-left: 10px;
+      padding-right: 10px; }
+      body div.header a:hover, body div.header a.active, body div.header a.active a, body a.active div.header a, body div.header a.nav a:focus, body a.nav div.header a:focus, body div.header a:focus {
+        color: white !important;
+        background-color: transparent !important;
+        text-decoration: none !important; }
+  body div.logout {
+    border: 2px solid white; }
+  body div.admin-hide {
+    display: none; }
   body div .sidebar-column {
     z-index: 1; }
     @media screen and (max-width: 768px) {
@@ -146,16 +156,6 @@ body {
     height: 35px; }
   body i.icon {
     font-size: 30pt; }
-  body img.profile {
-    height: 300px;
-    width: 300px;
-    background-image: url("../img/profile.jpg");
-    background-position: center;
-    background-size: contain; }
-    @media screen and (min-width: 768px) {
-      body img.profile {
-        height: 400px;
-        width: 400px; } }
   body nav.navbar {
     background-color: #454545;
     margin-bottom: 0;
@@ -163,30 +163,40 @@ body {
     border-bottom: 5px solid #0B6C06; }
   body .pre-wrap {
     white-space: pre-wrap; }
+  @media screen and (min-width: 544px) {
+    body .margin-right-100 div.col-xs-6:nth-child(odd) {
+      text-align: right; }
+      body .margin-right-100 div.col-xs-6:nth-child(odd) ul {
+        padding-right: 20px;
+        direction: rtl; } }
+  @media screen and (min-width: 768px) {
+    body .margin-right-100 div.col-xs-6:nth-child(odd) {
+      text-align: left; }
+      body .margin-right-100 div.col-xs-6:nth-child(odd) ul {
+        padding-right: default;
+        direction: ltr; } }
+  @media screen and (min-width: 992px) {
+    body .margin-right-100 {
+      margin-right: 100px; } }
+  body .tooltip {
+    font-size: 20pt; }
 
-.aboutList {
-  padding: 0px;
-  margin: 0px;
-  margin-top: 10px; }
+[data-aspect-ratio] {
+  display: block;
+  max-width: 100%;
+  position: relative; }
+  [data-aspect-ratio]::before {
+    content: '';
+    display: block; }
+  [data-aspect-ratio] > * {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
 
-.aboutListItem {
-  margin-left: 30px; }
-
-.about-me-lists, .about-me-lists li {
-  padding-left: 0px;
-  margin-left: 0px; }
-
-.connections {
-  border: 5px solid #454545;
-  padding: 15px;
-  width: auto;
-  display: inline-block; }
-
-.sidebar-grid {
-  z-index: 1;
-  background-color: #252525 !important; }
-
-.tooltip {
-  font-size: 20pt; }
+[data-aspect-ratio="16:9"]:before {
+  padding-top: 56.25%; }
 
 /*# sourceMappingURL=main.css.map */

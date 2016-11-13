@@ -29,30 +29,30 @@ firebase.auth().onAuthStateChanged(function(user) {
 // References
 var database = firebase.database();
 var databaseRef = database.ref();
-var projectRef = databaseRef.child('projects');
+var workRef = databaseRef.child('work');
 
-var projects = [];
-var projectIDs = [];
-projectRef.orderByChild('date').once('value', function(snapshot) {
+var work = [];
+var workIDs = [];
+workRef.orderByChild('date').once('value', function(snapshot) {
     // console.log(snapshot.val());
     snapshot.forEach(function(child) {
-    	projects.push(child.val());
-    	projectIDs.push(child.key);
+    	work.push(child.val());
+    	workIDs.push(child.key);
     });
     // console.log(projectIDs);
     if (id != -1) {
-    	processProjects(projects);
+    	processWork(work);
     }
 });
 
-var processProjects = function(projects) {
+var processWork = function(work) {
 	// console.log(projects);
-	console.log(projects[id]);
-	var project = projects[id];
-	for (var itemId in project) {
-		var toInsert = project[itemId];
-		if (itemId == 'date') {
-			var date = new Date(project[itemId] * -1);
+	console.log(work[id]);
+	var job = work[id];
+	for (var itemId in job) {
+		var toInsert = job[itemId];
+		if (itemId.indexOf('date') != -1) {
+			var date = new Date(job[itemId] * -1);
 			var day = date.getDate() + '';
 			if (day.length == 1) {
 				day = '0' + day;
@@ -69,27 +69,25 @@ var processProjects = function(projects) {
 
 var save = function() {
 	var item = {
-		date: new Date($('#date').val()).getTime() * -1,
-		demo: $('#demo').val(),
+		dateStart: new Date($('#dateStart').val()).getTime() * -1,
+		dateLeft: new Date($('#dateLeft').val()).getTime() * -1,
 		description: $('#description').val(),
-		image: $('#image').val(),
-		link: $('#link').val(),
-		title: $('#title').val(),
-		type: $('#type').val()
+		jobTitle: $('#jobTitle').val(),
+		company: $('#company').val()
 	};
 	// console.log(item);
 	if (id >= 0) {
-		projectRef.child(projectIDs[id]).set(item)
+		workRef.child(workIDs[id]).set(item)
 			.then(function() {
 				window.location.replace(window.location.href.split('/edit')[0]);
 			}, function(error) {
 				console.log(error);
 			});
 	} else {
-		var newPostKey = projectRef.push().key;
+		var newPostKey = workRef.push().key;
 		var update = {};
 		update[newPostKey] = item;
-		projectRef.update(update)
+		workRef.update(update)
 			.then(function() {
 				window.location.replace(window.location.href.split('/edit')[0]);
 			}, function(error) {
@@ -98,10 +96,10 @@ var save = function() {
 	}
 }
 
-var deleteProject = function() {
+var deleteWork = function() {
 	var verify = confirm('Are you sure? This change is permanent.');
 	if (verify) {
-		projectRef.child(projectIDs[id]).set(null)
+		workRef.child(workIDs[id]).set(null)
 		.then(function() {
 			window.location.replace(window.location.href.split('/edit')[0]);
 		}, function(error) {
@@ -119,16 +117,12 @@ $('#save').click(function(event) {
 });
 
 $('#delete').click(function(event) {
-	deleteProject();
+	deleteWork();
 
 	event.preventDefault();
     event.returnValue = false;
     return false;
 });
-
-var clearImg = function() {
-	$('#image').val('');
-}
 
 $('#login-form').on('submit', function(event) {
 
