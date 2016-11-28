@@ -115,6 +115,8 @@ body {
         color: white !important;
         background-color: transparent !important;
         text-decoration: none !important; }
+  body div.loader-div {
+    text-align: center; }
   body div.logout {
     border: 2px solid white; }
   body div.admin-hide {

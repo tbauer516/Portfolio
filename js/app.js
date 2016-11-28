@@ -133,7 +133,7 @@ var stopLoading = function() {
     var doneLoading = info != undefined && projects.length > 0 && work.length > 0;
     if (doneLoading) {
         $('div.hide').removeClass('hide');
-        $('div.loader').addClass('hide');
+        $('div.loader2').addClass('hide');
         processProjects(projects);
         processProfile(info);
         processWork(work);

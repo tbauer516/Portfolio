@@ -69,3 +69,18 @@ $bright: #08A700;
 		transform: rotate(360deg);
 	}
 }
+
+.loader2 {
+    border: 16px solid #252525; /* Light grey */
+    border-top: 16px solid white; /*#3498db; /* Blue */
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    animation: spin2 2s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin2 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
